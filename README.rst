@@ -2,8 +2,9 @@
 My Dotfiles
 ===========
 
-Inspired and borrowed much from `mathiasbynens's dotfiles
-<https://github.com/mathiasbynens/dotfiles>`_.
+
+Inspired and borrowed much from `mathiasbynens's 
+<https://github.com/mathiasbynens/dotfiles>`_ and `reorx's <https://github.com/reorx/dotfiles>`_ dotfiles.
 
 
 Installation
