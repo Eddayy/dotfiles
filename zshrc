@@ -67,8 +67,6 @@ source $ZSH/oh-my-zsh.sh
 # my zsh
 ##############################################################################
 
-#Python
-export PATH=~/anaconda/bin:$PATH
 
 # Load other parts of zshrc
 #source $HOME/.zshrc_os
@@ -408,3 +406,12 @@ alias cleanpycache="find . -type d -name '__pycache__' -prune -exec rm -r {} \;"
 if [ -e "$HOME/.zshrc_local" ]; then
     source $HOME/.zshrc_local
 fi
+
+###########
+#  Paths  #
+###########
+
+export PATH="$HOME/anaconda/bin:$PATH"
+export PATH="$HOME/flutter/bin:$PATH"
+export PATH="$HOME/Android/tools:$PATH"
+export PATH="$HOME/Android/platform-tools:$PATH"
