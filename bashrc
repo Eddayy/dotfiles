@@ -12,3 +12,6 @@ if [ -f $BASHSENSIBLE ]; then
 fi
 
 command -v vg >/dev/null 2>&1 && eval "$(vg eval --shell bash)"
+
+#Python
+export PATH=~/anaconda/bin:$PATH

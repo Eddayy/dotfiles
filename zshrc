@@ -67,8 +67,11 @@ source $ZSH/oh-my-zsh.sh
 # my zsh
 ##############################################################################
 
+#Python
+export PATH=~/anaconda/bin:$PATH
+
 # Load other parts of zshrc
-source $HOME/.zshrc_os
+#source $HOME/.zshrc_os
 
 # Load shell color
 #SHELL_COLOR="$HOME/.shell-colors/base16-default.dark.sh"
@@ -186,7 +189,7 @@ export LESS_TERMCAP_us=$(printf "\e[1;32m")
 # https://www.gnu.org/software/termutils/manual/termcap-1.3/html_chapter/termcap_4.html
 # http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
 
-export EDITOR=nvim
+export EDITOR=vim
 
 # mosh
 export MOSH_PREDICTION_DISPLAY=always
@@ -393,10 +396,10 @@ function py_find_packages() {
 ###########
 # Aliases #
 ###########
-
+alias c="echo -ne '\033c'"
 alias lsd='ls -ld */'
-alias vim="nvim -p"
-alias ovim="/usr/local/bin/vim -p"
+#alias vim="nvim -p"
+#alias ovim="/usr/local/bin/vim -p"
 alias tree="tree --dirsfirst"
 alias cleanpyc="find . -name '*.pyc' -exec rm {} \;"
 alias cleanpycache="find . -type d -name '__pycache__' -prune -exec rm -r {} \;"
