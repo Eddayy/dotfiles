@@ -2,6 +2,8 @@
     #name = Reorx
     #email = novoreorx@gmail.com
     useConfigOnly = true
+	email = edmundtay96@gmail.com
+	name = edmund
 [core]
     editor = nvim
     excludesfile = ~/.gitignore_global
