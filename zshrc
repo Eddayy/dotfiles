@@ -9,8 +9,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-if [ "$TERM_PROGRAM" = "HyperTerm" ]; then
-    ZSH_THEME="pure"
+if [ "$TERM_PROGRAM" = "vscode" ]; then
+    ZSH_THEME="spaceship"
 else
     ZSH_THEME="new_steeef"
 fi
