@@ -138,7 +138,7 @@ autocmd ColorScheme * highlight TrailWhitespace ctermbg=red guibg=red
 highlight TrailWhitespace ctermbg=red guibg=red
 match TrailWhitespace /\s\+$/
 
-set mouse=a
+set mouse=v
 
 " Prevent flashing when execute external command from vim
 set shellpipe=&>

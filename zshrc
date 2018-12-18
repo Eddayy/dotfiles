@@ -11,8 +11,9 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 if [ "$TERM_PROGRAM" = "vscode" ]; then
     ZSH_THEME="spaceship"
+
 else
-    ZSH_THEME="new_steeef"
+    ZSH_THEME="spaceship"
 fi
 #ZSH_THEME="robbyrussell"
 
@@ -401,17 +402,49 @@ alias lsd='ls -ld */'
 alias tree="tree --dirsfirst"
 alias cleanpyc="find . -name '*.pyc' -exec rm {} \;"
 alias cleanpycache="find . -type d -name '__pycache__' -prune -exec rm -r {} \;"
-
+alias sa='_() { source activate $1 };_'
+alias sd='source deactivate'
+alias iota-seed="cat /dev/urandom |LC_ALL=C tr -dc 'A-Z9' | fold -w 81 | head -n 1"
+alias jn="jupyter notebook"
 # Load local at last
 if [ -e "$HOME/.zshrc_local" ]; then
     source $HOME/.zshrc_local
 fi
 
+function options() {
+    PLUGIN_PATH="$HOME/.oh-my-zsh/plugins/"
+    for plugin in $plugins; do
+        echo "\n\nPlugin: $plugin"; grep -r "^function \w*" $PLUGIN_PATH$plugin | awk '{print $2}' | sed 's/()//'| tr '\n' ', '; grep -r "^alias" $PLUGIN_PATH$plugin | awk '{print $2}' | sed 's/=.*//' |  tr '\n' ', '
+    done
+}
+
+setopt +o nomatch
+
 ###########
 #  Paths  #
 ###########
+export ANDROID_HOME="$HOME/Android/Sdk"
+export ANDROID_EMULATOR="$HOME/Android/Sdk/emulator"
+export ANDROID_TOOLS="$HOME/Android/Sdk/tools"
+export ANDROID_PLATFORM_TOOLS="$HOME/Android/Sdk/platform-tools"
 
 export PATH="$HOME/anaconda/bin:$PATH"
 export PATH="$HOME/flutter/bin:$PATH"
-export PATH="$HOME/Android/tools:$PATH"
-export PATH="$HOME/Android/platform-tools:$PATH"
+export PATH="$ANDROID_EMULATOR:$PATH"
+export PATH="$ANDROID_TOOLS:$PATH"
+export PATH="$ANDROID_TOOLS/bin:$PATH"
+export PATH="$ANDROID_PLATFORM_TOOLS/bin:$PATH"
+
+if [ -d "/usr/local/cuda-10.0/bin/" ]; then
+    export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+fi
+
+###########
+# KeyBind #
+##########
+
+bindkey '^H' backward-kill-word
+
+#settings
+setopt extended_glob
