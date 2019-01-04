@@ -406,6 +406,10 @@ alias sa='_() { source activate $1 };_'
 alias sd='source deactivate'
 alias iota-seed="cat /dev/urandom |LC_ALL=C tr -dc 'A-Z9' | fold -w 81 | head -n 1"
 alias jn="jupyter notebook"
+alias urlencode='python -c "import sys, urllib.parse as ul; \
+    print(ul.quote_plus(sys.argv[1]))"'
+alias urldecode='python -c "import sys, urllib.parse as ul; \
+    print(ul.unquote_plus(sys.argv[1]))"'
 # Load local at last
 if [ -e "$HOME/.zshrc_local" ]; then
     source $HOME/.zshrc_local
