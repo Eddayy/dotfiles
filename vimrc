@@ -22,6 +22,7 @@ set fileencoding=utf-8
 set fencs=utf-8,chinese
 
 syntax on
+filetype plugin on
 filetype on
 
 set history=100
@@ -197,13 +198,13 @@ if &t_Co == 256
     if $TERM_PROGRAM == "Hyper"
         colorscheme Tomorrow-Night
     else
-        colorscheme Tomorrow-Night-Bright
+        colorscheme gruvbox
     endif
     "let base16colorspace=256  " Access colors present in 256 colorspace
     "colorscheme base16-ocean
-    highlight Pmenu ctermbg=234 guibg=#606060
-    highlight PmenuSel ctermbg=17 guifg=#dddd00
-    highlight PmenuSbar ctermbg=17 guibg=#d6d6d6
+    "highlight Pmenu ctermbg=234 guibg=#606060
+    "highlight PmenuSel ctermbg=17 guifg=#dddd00
+    "highlight PmenuSbar ctermbg=17 guibg=#d6d6d6
 else
     colorscheme caciano
     highlight Pmenu ctermbg=0
@@ -397,3 +398,7 @@ if 'VIRTUAL_ENV' in os.environ:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 endif
+
+
+" Map Ctrl-Backspace to delete the previous word in insert mode.
+:imap <C-BS> <C-W>
