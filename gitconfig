@@ -5,7 +5,7 @@
 	email = edmundtay96@gmail.com
 	name = edmund
 [core]
-    editor = nvim
+	editor = vim
     excludesfile = ~/.gitignore_global
     pager = diff-so-fancy | less --tabs=4 -RFX
 [merge]
@@ -40,6 +40,7 @@
 #    proxy = http://127.0.0.1:1235
 
 [alias]
+    undo = reset --soft HEAD~1
     st = status -sb
     ci = commit
     cim = commit -m

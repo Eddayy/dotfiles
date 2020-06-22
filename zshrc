@@ -428,9 +428,9 @@ setopt +o nomatch
 #  Paths  #
 ###########
 export ANDROID_HOME="$HOME/Android/Sdk"
-export ANDROID_EMULATOR="$HOME/Android/Sdk/emulator"
-export ANDROID_TOOLS="$HOME/Android/Sdk/tools"
-export ANDROID_PLATFORM_TOOLS="$HOME/Android/Sdk/platform-tools"
+export ANDROID_EMULATOR="$ANDROID_HOME/emulator"
+export ANDROID_TOOLS="$ANDROID_HOME/tools"
+export ANDROID_PLATFORM_TOOLS="$ANDROID_HOME/platform-tools"
 
 export PATH="$HOME/anaconda/bin:$PATH"
 export PATH="$HOME/flutter/bin:$PATH"
@@ -438,6 +438,10 @@ export PATH="$ANDROID_EMULATOR:$PATH"
 export PATH="$ANDROID_TOOLS:$PATH"
 export PATH="$ANDROID_TOOLS/bin:$PATH"
 export PATH="$ANDROID_PLATFORM_TOOLS/bin:$PATH"
+
+# flutter
+export PATH="$HOME/flutter/bin/cache/dart-sdk/bin:$PATH"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 if [ -d "/usr/local/cuda-10.0/bin/" ]; then
     export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
